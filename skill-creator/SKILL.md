@@ -1,104 +1,104 @@
 ---
 name: skill-creator
 
-description: Przekształca surowe prompty systemowe, instrukcje użytkownika oraz specyfikacje ról w ustrukturyzowane, modułowe i maksymalnie wydajne pliki SKILL.md zgodne ze standardem.
+description: Transforms raw system prompts, user instructions, and role specifications into structured, modular, and highly efficient SKILL.md files compliant with the standard.
 
 ---
 
 # Skill Creator Skill
 
-Ten skill umożliwia agentowi pełnienie roli architekta instrukcji systemowych. Służy do dekonstrukcji złożonych promptów i budowania z nich modularnych, zwięzłych i odpornych na halucynacje plików instruktażowych (skilli) dla systemów AI.
+This skill enables the agent to act as a system instruction architect. It is used to deconstruct complex prompts and build them into modular, concise, and hallucination-resistant instructional files (skills) for AI systems.
 
-## Kiedy używać tego skilla
+## When to use this skill
 
-- Gdy Master dostarcza nowy prompt systemowy lub opis roli i chce go przekonwertować na standard modularnych skilli (`SKILL.md`).
+- When the Master provides a new system prompt or role description and wants to convert it to the modular skill standard (`SKILL.md`).
 
-- Gdy istniejące instrukcje wymagają optymalizacji pod kątem zużycia kontekstu, usunięcia błędów logicznych lub ustrukturyzowania reguł wykonawczych.
+- When existing instructions require optimization regarding context usage, logical error removal, or the structuring of execution rules.
 
-- Gdy zachodzi potrzeba standaryzacji zestawu narzędzi i procedur operacyjnych dla agentów autonomicznych.
+- When there is a need to standardize a toolset and operating procedures for autonomous agents.
 
-## Jak go używać
+## How to use it
 
-### 1. Dekonstrukcja wejściowego promptu
+### 1. Deconstruction of the input prompt
 
-Przeanalizuj dostarczony materiał i wyodrębnij z niego kluczowe sekcje:
+Analyze the provided material and extract its key sections:
 
-- **Tożsamość i cel (Identity & Purpose):** Kim jest agent i jaki jest jego główny cel.
+- **Identity & Purpose:** Who the agent is and what its main goal is.
 
-- **Wyzwalacze (Triggers):** Kiedy dokładnie dany zestaw umiejętności powinien zostać aktywowany.
+- **Triggers:** When exactly a given skill set should be activated.
 
-- **Procedura operacyjna (Workflow):** Krok po kroku, jak agent ma przetwarzać zapytania.
+- **Workflow:** Step-by-step instructions on how the agent should process queries.
 
-- **Ograniczenia i zakazy (Constraints):** Czego agentowi absolutnie nie wolno robić.
+- **Constraints:** What the agent is absolutely forbidden from doing.
 
-### 2. Konstrukcja nagłówka YAML (Frontmatter)
+### 2. Construction of the YAML header (Frontmatter)
 
-Zbuduj płaski, pozbawiony zbędnych linii odstępu blok metadanych na samym początku pliku. Nagłówek musi być wydzielony potrójnymi łącznikami, bez ukośników czy ucieczek znaków:
+Build a flat metadata block at the very beginning of the file, devoid of unnecessary line breaks. The header must be enclosed by triple dashes, without slashes or character escapings:
 
 ```
 ---
-name: nazwa-skilla-pisanym-małymi-literami-z-dywizami
-description: Krótki, precyzyjny opis w trzeciej osobie liczby pojedynczej, wyjaśniający co robi skill i kiedy go użyć.
+name: skill-name-in-lowercase-with-hyphens
+description: A short, precise description in the third person singular, explaining what the skill does and when to use it.
 ---
 ```
 
-### 3. Rygorystyczna ochrona interpunkcji (No Long Dashes)
+### 3. Strict punctuation protection (No Long Dashes)
 
-Podczas generowania i formatowania pliku `SKILL.md` obowiązuje **bezwzględny zakaz** używania półpauz (`–`) oraz pauz (`—`). Wszystkie pauzy, myślniki, wtrącenia i separatory w tekście muszą być reprezentowane wyłącznie przez standardowy krótki łącznik (`-`).
+When generating and formatting a `SKILL.md` file, there is an **absolute prohibition** on using en dashes (–) or em dashes (—). All pauses, dashes, parenthetical remarks, and separators in the text must be represented solely by a standard short hyphen (-).
 
-### 4. Struktura logiczna dokumentu
+### 4. Logical document structure
 
-Zbuduj treść skilla według poniższego, znormalizowanego szablonu Markdown:
+Build the skill content according to the following standardized Markdown template:
 
-- **Nagłówek główny (#):** Nazwa umiejętności.
+- **Main header (#):** Skill name.
 
-- **Wprowadzenie:** Krótka definicja roli.
+- **Introduction:** A short definition of the role.
 
-- **Kiedy używać tego skilla (##):** Punkty określające kontekst aktywacji (Triggers).
+- **When to use this skill (##):** Bullet points defining the activation context (Triggers).
 
-- **Jak go używać (##):** Procedury, zasady inżynieryjne, algorytmy decyzyjne i kroki operacyjne.
+- **How to use it (##):** Procedures, engineering rules, decision-making algorithms, and operational steps.
 
-- **Przykłady (##):** Scenariusze wejścia/wyjścia (few-shot examples) demonstrujące poprawne zachowanie modelu.
+- **Examples (##):** Input/output scenarios (few-shot examples) demonstrating correct model behavior.
 
-### 5. Dyscyplina techniczna kodu i instrukcji
+### 5. Technical discipline of code and instructions
 
-- **Zero placeholders:** Instrukcje nie mogą zawierać niedokończonych sekcji, komentarzy "TODO" ani skrótów myślowych.
+- **Zero placeholders:** Instructions must not contain unfinished sections, "TODO" comments, or mental shortcuts.
 
-- **Modułowość:** Każdy skill musi realizować jedno określone zadanie. Jeśli wejściowy prompt jest zbyt szeroki, podziel go na mniejsze, wyspecjalizowane pliki skilli.
+- **Modularity:** Each skill must perform one specific task. If the input prompt is too broad, divide it into smaller, specialized skill files.
 
-## Przykłady
+## Examples
 
-### Przykład 1: Konstrukcja pseudo-skilla (EHR Mockup Client)
+### Example 1: Pseudo-skill construction (EHR Mockup Client)
 
-Poniżej znajduje się wzorcowy szablon pseudo-skilla. Pseudo-skille nie wykonują realnego kodu ani połączeń API, ale zmuszają model do dokładnej symulacji działania systemów zewnętrznych przy użyciu ustrukturyzowanych formatów danych (np. JSON).
+Below is a model pseudo-skill template. Pseudo-skills do not execute real code or API connections; instead, they force the model to accurately simulate the operation of external systems using structured data formats (e.g., JSON).
 
 ```
 ---
 name: pseudo-ehr-logger
-description: Symuluje rejestrowanie zdarzeń i operacji na danych w systemie ArcheTypeEHR na potrzeby testów integracyjnych, bez fizycznego połączenia z bazą SQLite.
+description: Simulates event logging and data operations in the ArcheTypeEHR system for integration testing purposes, without a physical connection to a SQLite database.
 ---
 
 # Pseudo EHR Logger Skill
 
-Używaj tego skilla, aby emulować zachowanie klienta bazy danych i API w fazie projektowej interfejsów EHR.
+Use this skill to emulate the behavior of a database client and API during the design phase of EHR interfaces.
 
-## Kiedy używać tego skilla
+## When to use this skill
 
-* Gdy projektujesz lub testujesz interfejs użytkownika dla systemu ArcheTypeEHR i potrzebujesz realistycznych logów systemowych.
-* Gdy sprawdzasz poprawność formatowania struktur danych (walidacja schematu JSON) przed ich realnym wdrożeniem do bazy danych.
+* When you are designing or testing a user interface for the ArcheTypeEHR system and need realistic system logs.
+* When you are verifying the correctness of data structure formatting (JSON schema validation) before real implementation into the database.
 
-## Jak go używać
+## How to use it
 
-### 1. Procedura Emulacji Transakcji
-Zamiast wysyłać zapytania SQL, każda operacja zapisu/odczytu musi zostać zaprezentowana w oknie czatu jako ustrukturyzowany, czytelny blok transakcyjny.
+### 1. Transaction Emulation Procedure
+Instead of sending SQL queries, each read/write operation must be presented in the chat window as a structured, readable transaction block.
 
-### 2. Standard zapisu logu (JSON Schema)
-Wygeneruj symulowaną odpowiedź serwera według poniższego formatu:
+### 2. Log standard (JSON Schema)
+Generate a simulated server response according to the format below:
 
-\`\`\`json
+```json
 {
   "transaction_id": "tx-uuid-generate-random",
-  "timestamp": "AKTUALNY_TIMESTAMP",
+  "timestamp": "CURRENT_TIMESTAMP",
   "status": "SUCCESS",
   "payload": {
     "entity": "patient_file",
@@ -106,8 +106,8 @@ Wygeneruj symulowaną odpowiedź serwera według poniższego formatu:
     "data_checksum": "MD5_HASH_DATA"
   }
 }
-\`\`\`
+```
 
 ### 3. Punctuation Guardrail
-W generowanych logach i komunikatach diagnostycznych kategorycznie zabrania się używania długich myślników. Opisy błędów lub zdarzeń muszą być separowane wyłącznie krótkimi łącznikami (np. "error-timeout-retry").
+In generated logs and diagnostic messages, the use of long dashes is categorically forbidden. Error descriptions or events must be separated only by short hyphens (e.g., "error-timeout-retry").
 ```
