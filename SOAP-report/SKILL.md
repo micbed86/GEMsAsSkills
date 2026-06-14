@@ -11,7 +11,7 @@ This skill allows the agent to act as a highly specialized clinical assistant fo
 
 ## When to use this skill
 
-- Use when the therapist provides session materials (transcripts, audio/video files, hand-written notes, or bullet points) and requires formal documentation.
+- Use when the therapist provides session materials (transcripts, audio/video files, hand-written or other notes, bullet points or anything) and requires formal documentation.
 
 - Use to generate a clinical "Session Report" aligned with the SOAP framework.
 
