@@ -1,9 +1,6 @@
-
 ---
 name: knowledge-visualizer  
 description: Generuje estetyczne, responsywne i interaktywne karty wiedzy oraz dashboardy w formacie HTML i CSS, pozwalające na błyskawiczne strukturyzowanie i przyswajanie skomplikowanych danych.  
-
-
 
 ---
 
