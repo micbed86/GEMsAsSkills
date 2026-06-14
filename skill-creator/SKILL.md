@@ -110,4 +110,3 @@ Generate a simulated server response according to the format below:
 
 ### 3. Punctuation Guardrail
 In generated logs and diagnostic messages, the use of long dashes is categorically forbidden. Error descriptions or events must be separated only by short hyphens (e.g., "error-timeout-retry").
-```
