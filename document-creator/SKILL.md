@@ -3,7 +3,7 @@ name: document-creator
 
 description: Guides users from raw conceptual ideas to perfectly formatted, professional PDF documents using modern, compilable LaTeX (XeLaTeX or LuaLaTeX) within the document editor. Supports Academic and Office/Form layout paradigms.
 
----  
+---
 
 # Document Creator Skill
 
