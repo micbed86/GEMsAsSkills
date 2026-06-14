@@ -1,57 +1,57 @@
 ---
-name: knowledge-visualizer  
-description: Generuje estetyczne, responsywne i interaktywne karty wiedzy oraz dashboardy w formacie HTML i CSS, pozwalające na błyskawiczne strukturyzowanie i przyswajanie skomplikowanych danych.  
+name: knowledge-visualizer
+description: Generates aesthetic, responsive, and interactive knowledge cards and dashboards in HTML and CSS, allowing for rapid structuring and assimilation of complex data.
 
 ---
 
-# Wizualizator Wiedzy - Karta Faktów
+# Knowledge Visualizer - Fact Sheet
 
-Ten skill pozwala na błyskawiczne przekształcanie surowych danych i złożonych konceptów w zapamiętywalne, interaktywne interfejsy użytkownika (UI). Celem jest osiągnięcie maksymalnego efektu poznawczego przy użyciu minimalistycznego, czystego kodu.
+This skill allows for the rapid transformation of raw data and complex concepts into memorable, interactive user interfaces (UI). The goal is to achieve maximum cognitive impact using minimalist, clean code.
 
-## Kiedy używać tego skilla
+## When to use this skill
 
-- Gdy Master potrzebuje czytelnie przedstawić skomplikowany proces, zestaw statystyk lub reguły techniczne.
+- When the Master needs to clearly present a complex process, a set of statistics, or technical rules.
 
-- Gdy chcesz stworzyć interaktywne podsumowanie, dashboard lub strukturę typu Bento Grid.
+- When you want to create an interactive summary, dashboard, or a Bento Grid-style structure.
 
-- Gdy surowy tekst jest zbyt monotonny lub trudny do szybkiej analizy.
+- When raw text is too monotonous or difficult to analyze quickly.
 
-## Jak go używać
+## How to use it
 
-### 1. Stylistyka i Design System (Dark Editorial Premium)
+### 1. Styling and Design System (Dark Editorial Premium)
 
-Zaimplementuj spójny, profesjonalny i nowoczesny wygląd:
+Implement a consistent, professional, and modern look:
 
-- **Tło:** Głęboka, nasycona ciemność (np. `#0D0F14`).
+- **Background:** Deep, saturated darkness (e.g., `#0D0F14`).
 
-- **Elementy interfejsu:** Szklany efekt (glassmorphism) z rozmyciem tła (`backdrop-filter: blur()`) i subtelnymi, półprzezroczystymi ramkami.
+- **UI Elements:** Glassmorphism effect with background blur (`backdrop-filter: blur()`) and subtle, translucent borders.
 
-- **Zaokrąglenia:** Nowoczesne zaokrąglenia krawędzi (standardowo klasy Tailwind typu `rounded-2xl` lub `rounded-3xl`).
+- **Rounding:** Modern edge rounding (standard Tailwind classes like `rounded-2xl` or `rounded-3xl`).
 
-- **Przestrzeń (Whitespace):** Dużo wolnej przestrzeni zapewniającej oddech i ułatwiającej skanowanie wzrokiem.
+- **Whitespace:** Plenty of clear space to allow for breathing room and easy visual scanning.
 
-- **Typografia:** Czyste, nowoczesne fonty bezszeryfowe (standardowo Inter z Google Fonts).
+- **Typography:** Clean, modern sans-serif fonts (standard Inter from Google Fonts).
 
-### 2. Architektura Informacji i Interakcja
+### 2. Information Architecture and Interaction
 
-- **Układ Bento Grid:** Dziel informacje na kafelki o różnych rozmiarach i wagach wizualnych. Najważniejsze statystyki lub główne zasady powinny zajmować największe bloki.
+- **Bento Grid Layout:** Divide information into tiles of varying sizes and visual weights. The most important statistics or main principles should occupy the largest blocks.
 
-- **Interaktywność:** Dodaj proste, bezbłędne mechanizmy interaktywne (np. filtry, karty z zakładkami, harmonijki, kalkulatory) napisane w czystym JavaScript.
+- **Interactivity:** Add simple, flawless interactive mechanisms (e.g., filters, tabbed cards, accordions, calculators) written in vanilla JavaScript.
 
-- **Responsywność (RWD):** Kod musi wyglądać nienagannie zarówno na monitorach desktopowych, jak i na ekranach telefonów komórkowych. Unikaj sztywnych szerokości w pikselach.
+- **Responsiveness (RWD):** The code must look impeccable on both desktop monitors and mobile phone screens. Avoid rigid widths in pixels.
 
-### 3. Techniczne Standardy i Bezpieczeństwo
+### 3. Technical Standards and Security
 
-- **Brak zewnętrznych bibliotek JS:** Unikaj ładowania niepotrzebnych, ciężkich skryptów.
+- **No external JS libraries:** Avoid loading unnecessary, heavy scripts.
 
-- **Paczki CSS:** Jeśli używasz Tailwind, ładuj go wyłącznie z bezpiecznego CDN w sekcji head.
+- **CSS Packages:** If using Tailwind, load it only from a secure CDN in the head section.
 
-- **Zabezpieczenie CSP (Content Security Policy):** Aby uniknąć rozsypania się interfejsu w środowiskach z restrykcyjnym CSP, zawsze dołączaj podstawowy blok `<style>` zawierający krytyczne style (layout, kolory tła i tekstu) jako fallback.
+- **CSP (Content Security Policy) Protection:** To prevent the interface from breaking in environments with restrictive CSP, always include a basic `<style>` block containing critical styles (layout, background, and text colors) as a fallback.
 
-- **Atrybuty SVG:** Dla każdego elementu SVG zawsze definiuj parametry `width` i `height` bezpośrednio w znaczniku `<svg>`. Zapobiega to ich gigantycznemu powiększeniu przed załadowaniem arkusza CSS.
+- **SVG Attributes:** Always define `width` and `height` parameters directly in the `<svg>` tag for every SVG element. This prevents them from appearing oversized before the CSS sheet loads.
 
-### 4. Dyscyplina Treści
+### 4. Content Discipline
 
-- Nigdy nie upraszczaj ani nie usuwaj merytorycznych informacji na rzecz wyglądu.
+- Never simplify or remove substantive information for the sake of appearance.
 
-- Kod musi być kompletny, w pełni funkcjonalny, bez komentarzy typu placeholder.
+- The code must be complete, fully functional, and without placeholder comments.
